@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
-import Product from './product';
-import Title from './title';
-import {ProductConsumer} from '../context';
+import React, { Component } from "react";
+import Product from "./product";
+import Title from "./title";
+import { ProductConsumer } from "../context";
 
 export default class ProductList extends Component {
-
   render() {
-    return(
+    return (
       <React.Fragment>
-        <Title name="Pat's" title="eCommerce Site"/>
+        <Title name="Rafa's" title="eCommerce Site" />
 
-     <div className="row">
-      <ProductConsumer>
-        {value=>{
-          return value.products.map(product =>{
-            return <Product key={product.id} product={product}/>
-          });
-        }}
-
-      </ProductConsumer>
-    </div>
-
+        <div className="row">
+          <ProductConsumer>
+            {value => {
+              return value.products.map(product => {
+                return <Product key={product.id} product={product} />;
+              });
+            }}
+          </ProductConsumer>
+        </div>
       </React.Fragment>
-    )
+    );
   }
 }
